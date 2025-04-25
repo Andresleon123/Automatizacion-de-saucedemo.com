@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'com.ejemplo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Selenium
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.20.0'
+
+    // TestNG (o JUnit si prefieres)
+    testImplementation 'org.testng:testng:7.9.0'
+}
+
+test {
+    useTestNG()
+    systemProperty 'webdriver.driver', System.getProperty('webdriver.driver', 'chrome')
+}

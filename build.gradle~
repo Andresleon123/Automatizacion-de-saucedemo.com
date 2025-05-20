@@ -18,7 +18,7 @@ repositories {
 defaultTasks 'clean', 'test', 'aggregate'
 
 dependencies {
-        // Serenity + Cucumber
+    // Serenity + Cucumber
     testImplementation 'net.serenity-bdd:serenity-core:4.0.30'
     testImplementation 'net.serenity-bdd:serenity-junit:4.0.30'
     implementation 'net.serenity-bdd:serenity-screenplay:4.0.30'

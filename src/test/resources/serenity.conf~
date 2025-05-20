@@ -1,0 +1,44 @@
+webdriver {
+  autodownloand = true
+  driver = chrome
+  capabilities {
+    "goog:chromeOptions" {
+      args = ["start-maximized",
+        "test-type", "no-sandbox",
+        "disable-popup-blocking",
+        "disable-download-notification", "ignore-certificate-errors",
+        "allow-running-insecure-content", "disable-translate",
+        "always-authorize-plugins", "disable-extensions",
+        "remote-allow-origins=*", "disable-infobars",
+        "disable-gpu", "disable-dev-shm-usage",
+        "disable-default-apps", "incognito"
+        #"window-size=500,900"
+      ]
+    }
+  }
+  timeouts {
+    implicitlywait = 25000
+    fluentwait = 225000
+  }
+}
+
+serenity {
+  project {
+    name = "saucedemoradl"
+  }
+  step {
+    delay = "2000"
+  }
+  maintain {
+    session = "true"
+  }
+
+}
+
+  staging {
+    webdriver.base.url = "https://www.saucedemo.com.com/staging"
+  }
+
+
+
+}

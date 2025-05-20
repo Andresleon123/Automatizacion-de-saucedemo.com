@@ -1,0 +1,7 @@
+# language: es
+
+Escenario: Agregar un producto al carrito
+Dado que estoy en la página de inicio de SauceDemo
+Y he iniciado sesión como 'standard_user' con la contraseña 'secret_sauce'
+Cuando agrego el producto "Sauce Labs Backpack" al carrito
+Entonces debería ver 1 producto en el carrito

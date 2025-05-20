@@ -1,0 +1,30 @@
+package stepdefinitions;
+
+import com.saucedemo.tasks.AgregarAlCarrito;
+import com.saucedemo.userinterfaces.CarritoPage;
+import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.Dado;
+import io.cucumber.java.es.Entonces;
+import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.actors.OnStage;
+
+public class AgregarProductoAlCarrito {
+
+    @Dado("agrego el producto {string} al carrito")
+    public void agregoElProductoAlCarrito(String Maleta) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                AgregarAlCarrito.elProducto(Maleta)
+        );
+    }
+
+    @Cuando("debería ver {int} producto en el carrito")
+    public void deberiaVerProductoEnElCarrito(int cantidad) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                Ensure.that(CarritoPage.CANTIDAD_PRODUCTOS).text().isEqualTo(String.valueOf(cantidad)));
+    }
+        @Entonces("vemos el producto agragado")
+        public void vemosElProductoAgregado (String productos) {
+            OnStage.theActorInTheSpotlight().attemptsTo(
+                    Ensure.that(CarritoPage.TITULO_DENTRO_DEL_CARRITO).text().isEqualTo(String.valueOf(productos));
+        }
+}

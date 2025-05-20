@@ -1,0 +1,22 @@
+package com.saucedemo.tasks;
+
+import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
+
+public class ConfirmarCompra {
+
+    public static final Target PRIMER_NOMBRE = Target.the("campo de texto para el nombre")
+            .located(By.id("user-name"));
+
+    public static final Target SEGUNDO_NOMBRE = Target.the("campo de texto para el apellido ")
+            .located(By.id("password"));
+
+    public static final Target CODIGO_POSTAL = Target.the("campo del codigo postal")
+            .located(By.id("login-button"));
+
+    public static final Target BTN_CONTINUAR = Target.the("botón de continuar")
+            .located(By.id("login-button"));
+
+    public static final Target BTN_FINALIZAR_COMPRA = Target.the("título de productos")
+            .located(By.className("title"));
+}
